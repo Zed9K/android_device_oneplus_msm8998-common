@@ -5,7 +5,16 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-
+    <string-array name="config_deviceKeyHandlerLibs" translatable="false">
+        <item>/system_ext/priv-app/LineageParts/LineageParts.apk</item>
+        <item>/system_ext/priv-app/DeviceExtras/DeviceExtras.apk</item>
+        <item>/system_ext/priv-app/DeviceExtras/DeviceExtras.apk</item>
+    </string-array>
+    <string-array name="config_deviceKeyHandlerClasses" translatable="false">
+        <item>org.lineageos.lineageparts.gestures.KeyHandler</item>
+        <item>org.lineageos.oneplus.DeviceExtras.slider.KeyHandler</item>
+        <item>org.lineageos.oneplus.DeviceExtras.touch.KeyHandler</item>
+    </string-array>
     <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
          of the following keys present:

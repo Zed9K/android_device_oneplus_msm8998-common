@@ -135,13 +135,20 @@ PRODUCT_PACKAGES += \
     libstdc++_vendor \
     vendor.qti.hardware.camera.device@1.0
 
-# Configstore
+# Common init scripts
 PRODUCT_PACKAGES += \
-    disable_configstore
+    init.deviceextras.rc
 
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore
+
+# DeviceExtras Package
+PRODUCT_PACKAGES += \
+    DeviceExtras
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/privapp-permissions-org.lineageos.deviceextras_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-org.lineageos.deviceextras_ext.xml
 
 # Display
 PRODUCT_PACKAGES += \
@@ -386,6 +393,11 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qmi_fw.conf:$(TARGET_COPY_OUT_VENDOR)/etc/qmi_fw.conf
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH) \
+    hardware/oneplus/DeviceExtras
+
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp_policy/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
@@ -425,7 +437,7 @@ PRODUCT_PACKAGES += \
 
 # Tri-state-key
 PRODUCT_PACKAGES += \
-    KeyHandler
+    tri-state-key_daemon.vendor
 
 # USB
 PRODUCT_PACKAGES += \

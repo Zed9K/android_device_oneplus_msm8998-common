@@ -1,2 +1,5 @@
 # Allow system_server to read Fast Charging status
 allow system_server sysfs_battery_supply:file { r_file_perms };
+
+allow system_server proc_touchpanel:dir { search };
+allow system_server sysfs_tri_state_key:file rw_file_perms;

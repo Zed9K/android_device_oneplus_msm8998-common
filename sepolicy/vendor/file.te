@@ -7,3 +7,4 @@ type sysfs_wifi, fs_type, sysfs_type;
 type sysfs_fastcharge, sysfs_type, fs_type;
 type sysfs_sound_control, sysfs_type, fs_type;
 type sysfs_workqueue, sysfs_type, fs_type;
+type sysfs_tri_state_key, sysfs_type, fs_type;

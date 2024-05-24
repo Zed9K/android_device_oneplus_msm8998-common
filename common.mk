@@ -124,6 +124,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.device@3.4:64 \
     android.hardware.camera.provider@2.4-impl:32 \
     android.hardware.camera.provider@2.4-service \
+    android.hardware.camera.provider@2.6:64 \
     libstdc++_vendor \
     vendor.qti.hardware.camera.device@1.0
 
@@ -308,8 +309,10 @@ PRODUCT_PACKAGES += \
     OnePlusPocketMode
 
 # Power
-$(call inherit-product, hardware/oneplus/libqti-perfd-client/libqti-perfd-client.mk)
-$(call inherit-product, hardware/oneplus/power-libperfmgr/power-libperfmgr.mk)
+PRODUCT_PACKAGES += \
+    android.hardware.power-service.lineage-libperfmgr \
+    android.hardware.power@1.2.vendor \
+    libqti-perfd-client
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json \
@@ -386,7 +389,9 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/oneplus
+    hardware/lineage/interfaces/power-libperfmgr \
+    hardware/oneplus \
+    hardware/qcom-caf/common/libqti-perfd-client
 
 # Tetheroffload
 PRODUCT_PACKAGES += \
@@ -404,10 +409,6 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
-
-# VNDK
-PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v33/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libutils-v33.so
 
 # VR
 PRODUCT_PACKAGES += \

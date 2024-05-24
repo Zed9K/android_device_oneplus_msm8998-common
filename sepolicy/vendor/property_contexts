@@ -1,4 +1,5 @@
 # Bluetooth
+persist.vendor.bt.address              u:object_r:vendor_bluetooth_prop:s0
 ro.vendor.bt.bdaddr_path               u:object_r:vendor_bluetooth_prop:s0
 
 # Camera
@@ -21,9 +22,6 @@ vendor.qcom.devup                      u:object_r:vendor_device_prop:s0
 
 # Mediacodec
 gpu.stats.debug.level                  u:object_r:vendor_video_prop:s0
-
-# Power HAL
-vendor.powerhal.                       u:object_r:vendor_power_prop:s0
 
 # RIL
 persist.sys.assert.panic               u:object_r:radio_control_prop:s0

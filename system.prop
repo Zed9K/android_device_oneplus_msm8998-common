@@ -44,6 +44,7 @@ ril.subscription.types=NV,RUIM
 ro.telephony.call_ring.multiple=false
 ro.telephony.default_network=22,20
 telephony.lteOnCdmaDevice=1
+ro.telephony.handle_audio_direction_changes_between_call_state_changes=false
 
 # SurfaceFlinger
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
